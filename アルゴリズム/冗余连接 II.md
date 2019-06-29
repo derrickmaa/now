@@ -41,10 +41,10 @@ class Solution:
             child = collections.defaultdict(list)
             for u, v in graph: # 反向链表（字典）
                 child[v].append(u)
-            p = child[value][0] # 返回的是字典，但是Value是列表，【0要制定位置
+            p = child[value][0] # 返回的是字典，但是Value是列表，[0]用来制定位置
             while True:
                 if value != p:
-                    if p in child:
+                    if p in child: # 迭代寻找
                         p = child[p][0]
                     else:
                         return False
