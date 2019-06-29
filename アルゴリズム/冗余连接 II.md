@@ -39,9 +39,9 @@ class Solution:
     def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
         def cyc(graph, value)： # 判断有无环
             child = collections.defaultdict(list)
-            for u, v in graph:
+            for u, v in graph: # 反向链表（字典）
                 child[v].append(u)
-            p = child[value][0]
+            p = child[value][0] # 返回的是字典，但是Value是列表，【0要制定位置
             while True:
                 if value != p:
                     if p in child:
