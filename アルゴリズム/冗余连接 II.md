@@ -64,7 +64,7 @@ class Solution:
             if len(child[u]) > 1: 
                 nodep = u
         
-        if nodev != None:
+        if nodev != None: # 存在
             place =[y for x, y in edges]
             t1 = place.index(nodev)
             tem = place[:]
