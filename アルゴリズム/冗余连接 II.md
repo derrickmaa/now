@@ -37,7 +37,7 @@ v   v
 from collections import Counter
 class Solution:
     def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
-        def cyc(graph, value):
+        def cyc(graph, value)： # 判断有无环
             child = collections.defaultdict(list)
             for u, v in graph:
                 child[v].append(u)
@@ -61,7 +61,7 @@ class Solution:
             child[u].append(v)
             if len(parent[v]) > 1: # 判断并记录有没有2个父节点的子节点
                 nodev = v
-            if len(child[u]) > 1: 
+            if len(child[u]) > 1: # # 判断并记录有没有2个子节点的父节点
                 nodep = u
         
         if nodev != None: # 存在有两个父节点的子节点
