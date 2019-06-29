@@ -64,15 +64,15 @@ class Solution:
             if len(child[u]) > 1: 
                 nodep = u
         
-        if nodev != None: # 存在
+        if nodev != None: # 存在有两个父节点的子节点
             place =[y for x, y in edges]
-            t1 = place.index(nodev)
+            t1 = place.index(nodev) # 找到第一个入度边位置
             tem = place[:]
             tem.remove(nodev)
-            t2 = tem.index(nodev) + 1
+            t2 = tem.index(nodev) + 1 # 找到第二个入度边位置
             temedges = edges[:]
             del temedges[t2]
-            if cyc(temedges, nodev):
+            if cyc(temedges, nodev): # 判断有无环
                 return edges[t1]
             else:
                 return edges[t2]
