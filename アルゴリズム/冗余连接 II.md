@@ -73,13 +73,13 @@ class Solution:
             temedges = edges[:]
             del temedges[t2]
             if cyc(temedges, nodev): # 判断有无环
-                return edges[t1]
+                return edges[t1] # 有环
             else:
-                return edges[t2]
-        if nodev == None:
+                return edges[t2] # 无环
+        if nodev == None: # 没有两个父节点的子节点
             for u, v in edges:
                 if v == nodep:
-                    return[u, v]
+                    return[u, v] # 找到有两个子节点的父节点，
 ```
 
 
