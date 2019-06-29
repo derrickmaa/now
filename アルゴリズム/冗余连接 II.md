@@ -59,7 +59,7 @@ class Solution:
         for u, v in edges:
             parent[v].append(u)
             child[u].append(v)
-            if len(parent[v]) > 1:
+            if len(parent[v]) > 1: # 判断并记录有没有2个父节点的子节点
                 nodev = v
             if len(child[u]) > 1: 
                 nodep = u
@@ -79,7 +79,7 @@ class Solution:
         if nodev == None: # 没有两个父节点的子节点
             for u, v in edges:
                 if v == nodep:
-                    return[u, v] # 找到有两个子节点的父节点，
+                    return[u, v] # 找到有两个子节点的父节点，返回这个父节点的入渡边
 ```
 
 
