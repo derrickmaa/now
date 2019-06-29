@@ -27,12 +27,9 @@ v   v
 二维数组大小的在3到1000范围内。
 二维数组中的每个整数在1到N之间，其中 N 是二维数组的大小。
 
-先判断有没有2个不同父节点的子节点
+先判断有没有2个不同父节点的子节点，
+如果有的话，删除其中一个，然后判断有没有环，
 ```language
-
-```
-
-
 from collections import Counter
 class Solution:
     def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
@@ -79,3 +76,6 @@ class Solution:
             for u, v in edges:
                 if v == nodep:
                     return[u, v]
+```
+
+
