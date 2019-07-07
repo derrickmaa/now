@@ -24,7 +24,7 @@ def main():
     cars = pd.DataFrame(cars)
     cars.columns = ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'results']
     for i in ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'results']:
-    # encode the str into label to support sklearn's DT (onehot can not be
+    # encode the str into label to support sklearn's DT (onehot can not be easily used in DecisionTree)
         cars[i] = preprocessing.LabelEncoder().fit(cars[i]).transform(cars[i])
     feature = cars.loc[:, ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety']]
     target = cars.loc[:, ['results']]
