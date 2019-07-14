@@ -41,3 +41,19 @@ result
 wine1     12      0      2
 wine2      0     13      0
 wine3      2      2      5
+
+データの特徴は13個あるが、イメージはその中のAlcoholとMalic acidを選んでする。データ数は178で、トレーニングとテストの比例は8:2。汎化性能は83%。今回のデータ数と選んだ特徴数は少ないから、汎化性能が悪くなると思ったが、データがよいから、あまり悪くなさそうだ。しかし、テストデータ数が少ないので、これは完全に汎化性能とすることができないと思う。もしデータ数がもっと多かったらほうがいいと考える。特徴数が増えたら、汎化性能が上がったが、可視化するため、こちらは2個のみを選んだ。
+特徴：
+1) Alcohol 
+2) Malic acid 
+3) Ash 
+4) Alcalinity of ash 
+5) Magnesium 
+6) Total phenols 
+7) Flavanoids 
+8) Nonflavanoid phenols 
+9) Proanthocyanins 
+10)Color intensity 
+11)Hue 
+12)OD280/OD315 of diluted wines 
+13)Proline
