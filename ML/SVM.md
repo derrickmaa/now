@@ -16,10 +16,15 @@ def main():
     clf_s = svm.SVC(kernel='linear')
     clf_s.fit(x_train, y_train.ravel())
     predicted = clf_s.predict(x_test)
-    confusion_matrix(y_test, predicted)
+    result = confusion_matrix(y_test, predicted)
+    result = pd.DataFrame(result)
+    result.columns = ['wine1', 'wine2', 'wine3']
+    result.index = ['wine1', 'wine2', 'wine3']
+    print(result)
     feature_combined = np.vstack((x_train, x_test))
     target_combined = np.vstack((y_train, y_test))
     target_combined = np.reshape(target_combined, (-1))
+    fig = plt.figure(figsize=(16, 9))
     plot_decision_regions(feature_combined, target_combined, clf=clf_s)
     plt.xlabel('Alcohol')
     plt.ylabel('Malic acid')
@@ -31,3 +36,8 @@ if __name__ == '__main__':
     main()
 
 ```
+result
+       wine1  wine2  wine3
+wine1     12      0      2
+wine2      0     13      0
+wine3      2      2      5
