@@ -8,7 +8,7 @@ from mlxtend.plotting import plot_decision_regions
 
 
 def main():
-    wine = np.loadtxt('E:/download/wine.data', delimiter=',')
+    wine = np.loadtxt('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data', delimiter=',')
     feature = wine[:, 1:3]
     target = wine[:, :1]
     target = target.astype(np.int64)
