@@ -33,7 +33,7 @@ tree.export_graphviz(clf, out_file=dot_data)
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 Image(graph.create_png())
 
-***********************************************************************************************
+```
 
 result:
         acc  good  unacc  v-good
@@ -41,6 +41,3 @@ acc      71     0      2       0
 good      1    12      0       0
 unacc     3     0    236       0
 v-good    1     1      0      19
-
-
-```
