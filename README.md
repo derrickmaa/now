@@ -1,2 +1,2 @@
 # now
-note
+it is just a code note.
